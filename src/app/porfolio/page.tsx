@@ -12,9 +12,6 @@ const Portfolio = () => {
   const [chartAkktierData, setChartAkktierData] = useState<any[]>([]);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNumberN(e.target.value);
-  };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(e.target.value);
@@ -26,10 +23,10 @@ const Portfolio = () => {
     setChartCountryData(newCountryData);
     const newChartAkktierData = [...chartAkktierData, [sharesNN, numberN * sharesPrice ]];
     setChartAkktierData(newChartAkktierData);
-    setNumberN('');
-    setSelectedCountry('');
-    setSharesPrice('');
-    setSharesNN('');
+    setNumberN(0);
+    setSelectedCountry("");
+    setSharesPrice(0);
+    setSharesNN(0);
 
   };
 
@@ -44,18 +41,18 @@ const Portfolio = () => {
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="Indtast beløb"
           value={numberN}
-          onChange={(e) => setNumberN(e.target.value)}
+          onChange={(e) => setNumberN(parseFloat(e.target.value))}
           required
           type="number"
           step="0.01"
-          max={1000000000}
+          max={1000000000} 
         />
 
         <input
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="oo"
           value={sharesNN}
-          onChange={(e) => setSharesNN(e.target.value)}
+          onChange={(e) => setNumberN(parseFloat(e.target.value))}
           required
         />
         
@@ -75,7 +72,7 @@ const Portfolio = () => {
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="Pris aktiepris (Midler tidigt)"
           value={sharesPrice}
-          onChange={(e) => setSharesPrice(e.target.value)}
+          onChange={(e) => setNumberN(parseFloat(e.target.value))}
           required
           type="number"
           step="0.01"
@@ -106,7 +103,6 @@ const Portfolio = () => {
         
         
       )}
-      {console.log(chartAkktierData)}
       <h1>Return: {numberN.toLocaleString('da-DK')} kr</h1>
       </MaxWidthWrapper>
     </>
