@@ -39,7 +39,7 @@ const pricingItems = [
   {
     plan: 'Pro',
     tagline: 'For larger projects with higher needs.',
-    quota: PLANS.find((p) => p.slug === 'pro')!.quota,
+    quota: PLANS.find((p) => p.slug === 'pro')!,
     features: [
       {
         text: '25 pages per PDF',
@@ -64,7 +64,7 @@ const pricingItems = [
   {
     plan: 'Pro+',
     tagline: 'For larger projects with higher needs.',
-    quota: PLANS.find((p) => p.slug === 'pro')!.quota,
+    quota: PLANS.find((p) => p.slug === 'pro')!,
     features: [
       {
         text: '25 pages per PDF',
@@ -141,7 +141,7 @@ export default function Page() {
 
                 <div className="flex h-20 items-center justify-center border-b border-t border-gray-200 bg-gray-50 rounded-b-xl ">
                   <div className="flex items-center space-x-1">
-                    <p>{quota}</p> {/*converting the number to the local formatting */}
+                   {/*converting the number to the local formatting */}
 
                     <Tooltip delayDuration={300}>
                       <TooltipTrigger className="cursor-default ml-1.5"> 
