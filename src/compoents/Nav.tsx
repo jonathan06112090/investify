@@ -76,7 +76,7 @@ export default function Nav() {
         </MaxWidthWrapper>
       </nav>
       <div className="sm:flex hidden fixed bottom-0 left-0 text-teal-600"> {/* on small devices it's to be flex (meaning visible) but usually it's going to be hidden */}
-        &copy;JHC 
+        &copy;Investify A/S
       </div>
     </>
   );
