@@ -52,7 +52,7 @@ const Portfolio = () => {
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="oo"
           value={sharesNN}
-          onChange={(e) => setNumberN(parseFloat(e.target.value))}
+          onChange={(e) => setSharesNN(parseFloat(e.target.value))}
           required
         />
         
@@ -72,7 +72,7 @@ const Portfolio = () => {
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="Pris aktiepris (Midler tidigt)"
           value={sharesPrice}
-          onChange={(e) => setNumberN(parseFloat(e.target.value))}
+          onChange={(e) => setSharesPrice(parseFloat(e.target.value))}
           required
           type="number"
           step="0.01"
