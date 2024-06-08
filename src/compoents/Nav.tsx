@@ -91,8 +91,13 @@ export default function Nav() {
                     <Link href="/ok2">
                     <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
                       B
-                      </span>
-                      </Link>
+                    </span>
+                    </Link>
+                    <Link href="/aktier">
+                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
+                      Aktier
+                    </span>
+                    </Link>
                   </div>
                 </div>
                 )}
