@@ -42,7 +42,7 @@ const Portfolio = () => {
       <form
         className="w-2/3 mx-auto text-center "
         onSubmit={handleSubmit}
-      >
+      > <p>Antal aktier</p> 
         <input
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="Indtast beløb"
@@ -53,7 +53,7 @@ const Portfolio = () => {
           step="0.01"
           max={1000000000} 
         />
-
+        <p>Navn på aktie</p> 
         <input
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="Navn"
@@ -61,7 +61,7 @@ const Portfolio = () => {
           onChange={(e) => setSharesNN((e.target.value))}
           required
         />
-        
+        <p>Området/Land</p>
         <select
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           value={selectedCountry}
@@ -74,6 +74,7 @@ const Portfolio = () => {
           <option value="Australia">Australia</option>
           <option value="DK">DK</option>
         </select>
+        <p>Pris aktiepris (Midler tidigt)</p>
         <input
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="Pris aktiepris (Midler tidigt)"
@@ -104,10 +105,7 @@ const Portfolio = () => {
           data={[['Task', 'Hours per Day'], ...chartAkktierData]}
           width={"100%"}
           height={"800px"}
-        />
-        
-        
-        
+        />   
       )}
       <h1>Return: {numberN.toLocaleString('da-DK')} kr</h1>
       </MaxWidthWrapper>
