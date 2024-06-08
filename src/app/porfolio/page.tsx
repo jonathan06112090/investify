@@ -56,7 +56,7 @@ const Portfolio = () => {
 
         <input
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
-          placeholder="oo"
+          placeholder="Navn"
           value={sharesNN}
           onChange={(e) => setSharesNN((e.target.value))}
           required
