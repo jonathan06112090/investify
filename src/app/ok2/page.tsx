@@ -10,13 +10,20 @@ export default function ReturnCalculator() {
   const [returnRate, setReturnRate] = useState(7);
 
   const calculateReturn = () => {
-    let futureValue = startCapital * (1+(returnRate/100)) ** year + ((monthlyInvestment*12)*((1+(returnRate/100)) ** year - 1 )/(returnRate/100));
+    let futureValue;
+
+    if (returnRate !== 0) {
+      futureValue = startCapital * (1+(returnRate/100)) ** year + ((monthlyInvestment*12)*((1+(returnRate/100)) ** year - 1 )/(returnRate/100));
+    } else {
+      futureValue = startCapital + (monthlyInvestment * 12) * year;
+    }
+
     futureValue = parseFloat(futureValue.toFixed(2));
-    return futureValue ;
+    return futureValue;
   };
 
   const calculateReturn2 = () => {
-    let futureValue2 = calculateReturn() - (startCapital + (monthlyInvestment*12)* (year - 1)) ;
+    let futureValue2 = calculateReturn() - (startCapital + (monthlyInvestment*12)* year );
     futureValue2 = parseFloat(futureValue2.toFixed(2));
     return futureValue2 ;
   };
@@ -53,12 +60,10 @@ export default function ReturnCalculator() {
           Resultat : {calculateReturn().toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}
         </div>
         <div className="mt-4 text-lg font-semibold text-green-600">
-          Resultat : {calculateReturn2().toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}
+          Gevinst : {calculateReturn2().toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}
         </div>
       </div>
     </div>
     </MaxWidthWrapper>
   )
 }
-
-
