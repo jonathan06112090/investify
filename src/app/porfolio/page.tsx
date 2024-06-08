@@ -1,16 +1,22 @@
 'use client';
 import MaxWidthWrapper from '@/compoents/MaxWidthWrapper';
+import { buttonVariants } from '@/compoents/ui/button';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { Chart } from "react-google-charts";
 
 const Portfolio = () => {
   const [numberN, setNumberN] = useState<number>(0);
   const [sharesPrice, setSharesPrice] = useState<number>(0);
-  const [sharesNN, setSharesNN] = useState<number>(0);
+  const [sharesNN, setSharesNN] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('');
   const [chartCountryData, setChartCountryData] = useState<any[]>([]);
   const [chartAkktierData, setChartAkktierData] = useState<any[]>([]);
   const [isTextVisible, setIsTextVisible] = useState(false);
+
+  
+   
 
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -26,7 +32,7 @@ const Portfolio = () => {
     setNumberN(0);
     setSelectedCountry("");
     setSharesPrice(0);
-    setSharesNN(0);
+    setSharesNN("");
 
   };
 
@@ -52,7 +58,7 @@ const Portfolio = () => {
           className="w-full bg-white text-teal-600 rounded-full py-2 px-4 mb-4 border-2 border-teal-600 text-xl"
           placeholder="oo"
           value={sharesNN}
-          onChange={(e) => setSharesNN(parseFloat(e.target.value))}
+          onChange={(e) => setSharesNN((e.target.value))}
           required
         />
         
