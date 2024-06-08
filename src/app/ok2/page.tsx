@@ -15,6 +15,12 @@ export default function ReturnCalculator() {
     return futureValue ;
   };
 
+  const calculateReturn2 = () => {
+    let futureValue2 = calculateReturn() - (startCapital + (monthlyInvestment*12)* (year - 1)) ;
+    futureValue2 = parseFloat(futureValue2.toFixed(2));
+    return futureValue2 ;
+  };
+
   
   
 
@@ -46,9 +52,13 @@ export default function ReturnCalculator() {
         <div className="mt-4 text-lg font-semibold text-green-600">
           Resultat : {calculateReturn().toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}
         </div>
+        <div className="mt-4 text-lg font-semibold text-green-600">
+          Resultat : {calculateReturn2().toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}
+        </div>
       </div>
     </div>
     </MaxWidthWrapper>
   )
 }
+
 
