@@ -37,7 +37,7 @@ export default function Nav() {
             <button
             className="hover:text-black transition duration-300 ease-in-out cursor-pointer flex items-center relative"
             onClick={toggleDropdown}>
-              Handelsplatforme
+               Button
               <svg width="20" height="20" viewBox="28 28" focusable="false" className="NMm5M">
                 <path d="M7 10l5 5 5-5H7z"></path>
               </svg>
