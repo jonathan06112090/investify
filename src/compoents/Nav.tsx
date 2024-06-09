@@ -83,14 +83,14 @@ export default function Nav() {
                 {isDropdownOpen && (
                 <div className="absolute top-14 left-0 w-40 bg-white rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100">
                   <div className="py-1">
-                    <Link href="/ok">
+                    <Link href="/Sporgsmaal">
                     <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
-                      A
+                      Spørgsmål
                     </span>
                     </Link>
-                    <Link href="/ok2">
+                    <Link href="/AfkastBeregner">
                     <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
-                      B
+                      Afkast beregner
                     </span>
                     </Link>
                     <Link href="/aktier">
