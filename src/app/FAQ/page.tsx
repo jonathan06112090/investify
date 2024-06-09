@@ -14,7 +14,7 @@ const FAQ = () => {
 
         <h2 className="text-2xl mb-4">Hvordan uploader jeg min portefølje?</h2>
         <p className="mb-8">
-          For at uploade din portefølje, skal du logge ind på din konto, gå til "Portefølje" sektionen og følge vejledningen.
+          For at uploade din portefølje, skal du logge ind på din konto, gå til Portefølje sektionen og følge vejledningen.
         </p>
 
         <h2 className="text-2xl mb-4">Hvordan fungerer AI forbedringer?</h2>
@@ -37,3 +37,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+
