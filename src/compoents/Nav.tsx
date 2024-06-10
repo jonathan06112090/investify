@@ -52,11 +52,6 @@ export default function Nav() {
                 {isDropdownOpen && (
                 <div className="absolute top-14 left-0 w-40 bg-white rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100">
                   <div className="py-1">
-                    <Link href="/Tilpasning">
-                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
-                      Tilpasning
-                    </span>
-                    </Link>
                     <Link href="/AfkastBeregner">
                     <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
                       Afkast beregner
@@ -71,6 +66,11 @@ export default function Nav() {
                 </div>
                 )}
                 </button>
+                <Link href="/Tilpasning">
+                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
+                      Tilpasning
+                    </span>
+                    </Link>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/NyProfile">{user.name}</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/FAQ">FAQ</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/pricing">Pris</Link></div>
@@ -88,11 +88,6 @@ export default function Nav() {
                 {isDropdownOpen && (
                 <div className="absolute top-14 left-0 w-40 bg-white rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100">
                   <div className="py-1">
-                    <Link href="/Tilpasning">
-                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
-                      Tilpasning
-                    </span>
-                    </Link>
                     <Link href="/AfkastBeregner">
                     <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
                       Afkast beregner
@@ -107,6 +102,11 @@ export default function Nav() {
                 </div>
                 )}
                 </button>
+                <Link href="/Tilpasning">
+                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
+                      Tilpasning
+                    </span>
+                    </Link>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/FAQ">FAQ</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/pricing">Pris</Link></div>
                 
