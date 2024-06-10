@@ -27,9 +27,7 @@ const Portfolio = () => {
 
   const calculateRiskLevel = (data: any[]) => {
     const threshold = 0.2; // 20% concentration threshold
-    const volatileCountries = ['USA', 'Canada', 'Australia']; // example of more volatile markets
     let highConcentration = false;
-    let highVolatility = false;
     
     const totalInvestment = data.reduce((acc, [name, value]) => acc + value, 0);
     data.forEach(([name, value]) => {
@@ -38,13 +36,9 @@ const Portfolio = () => {
       }
     });
 
-    chartCountryData.forEach(([country, value]) => {
-      if (volatileCountries.includes(country) && value / totalInvestment > threshold) {
-        highVolatility = true;
-      }
-    });
 
-    if (highConcentration || highVolatility) {
+
+    if (highConcentration ) {
       setRiskLevel('High Risk');
     } else {
       setRiskLevel('Low Risk');
@@ -120,8 +114,12 @@ const Portfolio = () => {
           <button type="submit" className="rounded py-2 px-4 mb-4">Opdater diagram</button>
         </form>
         <button className='rounded py-2 px-4' onClick={() => setIsTextVisible(!isTextVisible)}>
-          {isTextVisible ? 'Skjul kage-diagram' : 'Se kage-diagram'}
+          {isTextVisible ? 'Se opdelingen i aktier' : 'Se opdelingen i lande'}
         </button>
+        <br />
+        <br />
+        <h1>Porteføljestørrelsen: kr {totalValue.toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}</h1>
+        <h2>Risk Level: {riskLevel}</h2>
         <br />
         {isTextVisible ? (
           <Chart
@@ -138,8 +136,6 @@ const Portfolio = () => {
             height={"800px"}
           />
         )}
-        <h1>Porteføljestørrelsen: kr {totalValue.toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}</h1>
-        <h2>Risk Level: {riskLevel}</h2>
       </MaxWidthWrapper>
     </>
   );
