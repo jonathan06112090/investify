@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 
+// Reusable form field component
 const FormField = ({ label, name, type, options, handleChange }) => (
   <div className="mb-4">
     <label htmlFor={name} className="block text-sm font-medium text-gray-700">
@@ -26,7 +27,9 @@ const FormField = ({ label, name, type, options, handleChange }) => (
   </div>
 );
 
+// Main Questionnaire component
 export default function Questionnaire() {
+  // State to manage form data
   const [formState, setFormState] = useState({
     timeHorizon: '',
     riskProfile: '',
@@ -35,6 +38,7 @@ export default function Questionnaire() {
     previousExperience: '',
   });
 
+  // Handle change in form fields
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -42,9 +46,11 @@ export default function Questionnaire() {
     });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validate that all fields are filled
     for (let field in formState) {
       if (!formState[field]) {
         alert(`Please fill out the ${field} field.`);
@@ -52,10 +58,8 @@ export default function Questionnaire() {
       }
     }
 
+    // Log the form state to the console (can be replaced with API call)
     console.log(formState);
-
-    // Here you can handle the form submission.
-    // For example, you might want to send the formState object to your server or to an API.
   };
 
   return (
@@ -111,7 +115,7 @@ export default function Questionnaire() {
         />
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-indigo-600 text-black font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           Submit
         </button>
