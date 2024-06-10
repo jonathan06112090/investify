@@ -51,26 +51,6 @@ const Portfolio = () => {
     }
   };
 
-  if (isLoading) return (
-    <MaxWidthWrapper className="mb-8 mt-24 text-center max-w-5xl">
-      <div className='text-6xl'>Loading...</div>
-    </MaxWidthWrapper>
-  );
-
-  if (error) return <div>{error.message}</div>;
-
-  if (!user) return (
-    <MaxWidthWrapper className="mb-8 mt-24 text-center max-w-5xl">
-      <h1 className="text-3xl">Du skal være logget ind for at kunne bruge denne side</h1>
-      <br/><br/>
-      <div className='text-3xl'>
-        <Link className={buttonVariants()} href="/api/auth/login">
-          Login
-        </Link>
-      </div>
-    </MaxWidthWrapper>
-  );
-
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(e.target.value);
   };
