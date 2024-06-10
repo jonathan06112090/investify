@@ -15,14 +15,61 @@ const Portfolio = () => {
   const [chartAkktierData, setChartAkktierData] = useState<any[]>([]);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [totalValue, setTotalValue] = useState<number>(0);
+  const [riskLevel, setRiskLevel] = useState<string>('');
 
   const { user, error, isLoading } = useUser();
 
   useEffect(() => {
     const total = chartAkktierData.reduce((acc, [name, value]) => acc + value, 0);
     setTotalValue(total);
+    calculateRiskLevel(chartAkktierData);
   }, [chartAkktierData]);
 
+  const calculateRiskLevel = (data: any[]) => {
+    const threshold = 0.2; // 20% concentration threshold
+    const volatileCountries = ['USA', 'Canada', 'Australia']; // example of more volatile markets
+    let highConcentration = false;
+    let highVolatility = false;
+    
+    const totalInvestment = data.reduce((acc, [name, value]) => acc + value, 0);
+    data.forEach(([name, value]) => {
+      if (value / totalInvestment > threshold) {
+        highConcentration = true;
+      }
+    });
+
+    chartCountryData.forEach(([country, value]) => {
+      if (volatileCountries.includes(country) && value / totalInvestment > threshold) {
+        highVolatility = true;
+      }
+    });
+
+    if (highConcentration || highVolatility) {
+      setRiskLevel('High Risk');
+    } else {
+      setRiskLevel('Low Risk');
+    }
+  };
+
+  if (isLoading) return (
+    <MaxWidthWrapper className="mb-8 mt-24 text-center max-w-5xl">
+      <div className='text-6xl'>Loading...</div>
+    </MaxWidthWrapper>
+  );
+
+  if (error) return <div>{error.message}</div>;
+
+  if (!user) return (
+    <MaxWidthWrapper className="mb-8 mt-24 text-center max-w-5xl">
+      <h1 className="text-3xl">Du skal være logget ind for at kunne bruge denne side</h1>
+      <br/><br/>
+      <div className='text-3xl'>
+        <Link className={buttonVariants()} href="/api/auth/login">
+          Login
+        </Link>
+      </div>
+    </MaxWidthWrapper>
+  );
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(e.target.value);
@@ -111,7 +158,8 @@ const Portfolio = () => {
             height={"800px"}
           />
         )}
-        <h1>Porteføljestørrelsen: kr {totalValue.toFixed(2)}</h1>
+        <h1>Porteføljestørrelsen: kr {totalValue.toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}</h1>
+        <h2>Risk Level: {riskLevel}</h2>
       </MaxWidthWrapper>
     </>
   );
