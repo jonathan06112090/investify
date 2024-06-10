@@ -24,8 +24,8 @@ export const PLANS = [
         },
     },
     {
-        name: "Pro News+",
-        slug: "Pro News+",
+        name: "Pro news+",
+        slug: "pro news+",
         price: {
             amount: 249,
             priceIds: {
