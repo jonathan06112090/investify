@@ -68,7 +68,7 @@ const pricingItems = [
   },
   {
     plan: 'Pro News+',
-    tagline: 'For larger projects with higher needs.',//"Du har med ProNews+ adgang til aktiekurser, afkastberegner, portefølje oversigt/hjælper og AI-forslag baseret på præference og eventuelle live nyhedsopdateringer releterede til aktier."
+    tagline: 'Til den erfarne investor',
     quota: PLANS.find((p) => p.slug === 'pro')!,
     features: [
       {
