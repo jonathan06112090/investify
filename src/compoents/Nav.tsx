@@ -66,11 +66,7 @@ export default function Nav() {
                 </div>
                 )}
                 </button>
-                <Link href="/Tilpasning">
-                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
-                      Tilpasning
-                    </span>
-                    </Link>
+                <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/Tilpasning">Tilpasning</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/NyProfile">{user.name}</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/FAQ">FAQ</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/pricing">Pris</Link></div>
@@ -102,11 +98,7 @@ export default function Nav() {
                 </div>
                 )}
                 </button>
-                <Link href="/Tilpasning">
-                    <span className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" onClick={closeDropdown}>
-                      Tilpasning
-                    </span>
-                    </Link>
+                <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/Tilpasning">Tilpasning</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/FAQ">FAQ</Link></div>
                 <div className='hover:text-black transition duration-300 ease-in-out cursor-pointer'><Link href="/pricing">Pris</Link></div>
                 
@@ -129,3 +121,4 @@ export default function Nav() {
     </>
   );
 }
+
