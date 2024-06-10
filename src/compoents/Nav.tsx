@@ -45,7 +45,7 @@ export default function Nav() {
             {user ? (
               <div className='flex items-center space-x-4 md:space-x-8 mt-4 md:mt-0'>
                 <button className="hover:text-black transition duration-300 ease-in-out cursor-pointer flex items-center relative"  onClick={toggleDropdown}>
-                  Button
+                  Mere
                   <svg width="20" height="20" viewBox="28 28" focusable="false" className="NMm5M">
                   <path d="M7 10l5 5 5-5H7z"></path>
                 </svg>
@@ -81,7 +81,7 @@ export default function Nav() {
             ) : (
               <div  className='flex items-center space-x-4 md:space-x-8 mt-4 md:mt-0'>
                 <button className="hover:text-black transition duration-300 ease-in-out cursor-pointer flex items-center relative"  onClick={toggleDropdown}>
-                  Button
+                  Mere
                   <svg width="20" height="20" viewBox="28 28" focusable="false" className="NMm5M">
                   <path d="M7 10l5 5 5-5H7z"></path>
                 </svg>
