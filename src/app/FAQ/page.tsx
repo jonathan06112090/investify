@@ -19,7 +19,7 @@ const FAQ = () => {
 
         <h2 className="text-2xl mb-4">Hvordan fungerer AI forbedringer?</h2>
         <p className="mb-8">
-          Vores AI analyserer din portefølje baseret på aktuelle markedsdata og dine investeringsmål. AI en giver derefter anbefalinger til, hvordan du kan optimere din portefølje for bedre afkast og risikostyring.
+          Vores AI analyserer din portefølje baseret på aktuelle markedsdata og dine investeringsmål. AI en giver derefter forslag til, hvordan du kan optimere din portefølje for bedre afkast og risikostyring.
         </p>
 
         <h2 className="text-2xl mb-4">Kan jeg bruge Investify gratis?</h2>
