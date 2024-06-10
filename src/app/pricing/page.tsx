@@ -121,7 +121,7 @@ export default function Page() {
                 "relative rounded-2xl bg-white shadow-lg", {
                   "border-2 border-blue-600 shadow-blue-200": plan === "Pro",//if plan = Pre
                   "border border-gray-200": plan !== "Pro",//if plan not Pre
-                  "border-2 border-green-600 shadow-blue-200": plan === "Pro+",
+                  "border-2 border-green-600 shadow-blue-200": plan === "Pro News+",
                 }
               )}> 
                 {plan === "Pro" && ( //if plan = Pre
