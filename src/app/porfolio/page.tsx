@@ -42,9 +42,9 @@ const Portfolio = () => {
 
     // Set risk level based on concentration
     if (highConcentration) {
-      setRiskLevel('High Risk');
+      setRiskLevel('Høj Risiko');
     } else {
-      setRiskLevel('Low Risk');
+      setRiskLevel('Lav Risiko');
     }
   };
 
@@ -122,7 +122,7 @@ const Portfolio = () => {
         <br />
         <br />
         <h1>Porteføljestørrelsen: kr {totalValue.toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}</h1>
-        <h2>Risk Level: {riskLevel}</h2>
+        <h2>Risiko: {riskLevel}</h2>
         <br />
         {isTextVisible ? (
           <Chart
